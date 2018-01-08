@@ -22,3 +22,7 @@ sudo yum install mysql-devel
 pip install flask-mysqldb  # need mysql-server yum install mysql-server
 pip install Flask-WTF
 pip install passlib
+
+HEROKU
+sudo pip install gunicorn
+pip freeze > requirements.txt
