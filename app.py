@@ -64,7 +64,7 @@ def background_thread():
         count += 1
         price = get_price('bitcoin')
         socketio.emit('my_response',
-                      {'data': 'Bitcoin= %s',[price], 'count': count},
+                      {'data': 'Bitcoin= %s', 'count': count, (price)},
                       namespace='/test')
 
 def write_json(data,filename='answer.json'):
