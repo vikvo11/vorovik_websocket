@@ -28,6 +28,7 @@ last_msg=''
 #https://api.telegram.org/bot521265983:AAFUSq8QQzLUURwmCgXeBCjhRThRvf9YVM0/setWebhook?url=https://vorovik.pythonanywhere.com/
 URL='https://api.telegram.org/bot{}/'.format(token)
     #<End -Declare> :
+    async_mode = None
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'memcached'
 app.config['SECRET_KEY'] = 'morkovka18'
