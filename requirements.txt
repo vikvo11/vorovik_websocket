@@ -16,3 +16,4 @@ python-socketio==1.8.4
 requests==2.18.4
 six==1.9.0
 urllib3==1.22
+gunicorn==19.3.0
