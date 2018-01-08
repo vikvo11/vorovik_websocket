@@ -62,8 +62,9 @@ def background_thread():
     while True:
         socketio.sleep(10)
         count += 1
+        price = get_price('bitcoin')
         socketio.emit('my_response',
-                      {'data': 'Server generated event', 'count': count},
+                      {'data': 'Bitcoin= %s',[price], 'count': count},
                       namespace='/test')
 
 def write_json(data,filename='answer.json'):
@@ -313,6 +314,7 @@ def webhook():
         if re.search(pattern,text):
             price = get_price(parc_text(text))
             send_message(chat_id,price)
+            #socketio.emit('my_response', {'data': text, 'count': 5}, namespace='/test')
 
         global last_msg
         last_msg=json.dumps(r,ensure_ascii=False)
