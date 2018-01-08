@@ -12,3 +12,13 @@ status of web-services in UI and start/stop weblogic
 
 -> Flask Socket
 pip install flask-socketio
+#Mysql-Server
+wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+sudo yum localinstall platform-and-version-specific-package-name.rpm
+sudo yum install libodb-mysql-devel.x86_64
+sudo yum install mysql-server
+sudo yum install mysql-devel
+
+pip install flask-mysqldb  # need mysql-server yum install mysql-server
+pip install Flask-WTF
+pip install passlib
