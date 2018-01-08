@@ -32,7 +32,7 @@ app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'memcached'
 app.config['SECRET_KEY'] = 'morkovka18'
 app.debug = True
-sslify=SSLify(app)
+#sslify=SSLify(app)
 socketio = SocketIO(app)
 #socketio.run(app)
 
