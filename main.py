@@ -35,6 +35,9 @@ app.debug = True
 #sslify=SSLify(app)
 socketio = SocketIO(app)
 #socketio.run(app)
+socketio = SocketIO(app, async_mode=async_mode)
+thread = None
+thread_lock = Lock()
 
 
 #Config mysql
@@ -192,6 +195,16 @@ def main():
 
 '''
 '''
+def background_thread():
+    """Example of how to send server generated events to clients."""
+    count = 0
+    while True:
+        socketio.sleep(10)
+        count += 1
+        socketio.emit('my_response',
+                      {'data': 'Server generated event', 'count': count},
+                      namespace='/test')
+
 @app.route('/123')
 def index123():
     return render_template('index.html', async_mode=socketio.async_mode)
