@@ -6,7 +6,7 @@ from flask import jsonify #For response in /webhook
 from flask_sslify import SSLify #For use HTTPS
 from flask import Flask, flash, redirect, render_template, request, session, abort,url_for,logging #For work with HTTP and templates
 from flask_mysqldb import MySQL #For connect to MySQL DB
-from HTTP_basic_Auth import auth #For HTTP basic auth
+#from HTTP_basic_Auth import auth #For HTTP basic auth
     #<End -Flask modules>
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators  # Forms for create HTML fields
 from passlib.hash import sha256_crypt # For Password cashing
@@ -321,7 +321,7 @@ def webhook():
     return '<h1>Hello bot</h1>'
 
 @app.route('/last_msg/',methods=['POST','GET'])
-@auth.login_required
+#@auth.login_required
 #curl -u vorovik:python123 -i https://vorovik.pythonanywhere.com/last_msg/
 def tes():
     r='<h2>{}</h2>'.format(last_msg)
@@ -418,9 +418,9 @@ def test_disconnect():
 #-***************
 
 if __name__ =='__main__':
-    #socketio.run(app)   
+    #socketio.run(app)
     main()
     #app.run('0.0.0.0',port=5000)
     #socketio.run(app, debug=True)
-#socketio.run(app, host='0.0.0.0', port=5000, debug=True)
+socketio.run(app, host='0.0.0.0', port=5000, debug=True)
     #app.run()

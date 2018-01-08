@@ -1,0 +1,258 @@
+=========================
+Pre Deploy Jobs
+=========================
+Done.
+=========================
+MAIN script
+=========================
+Script: PROD/ENABLE_AQ_EVENT_LISTENER.sql
+Enable listener.
+PL/SQL procedure successfully completed.
+Script: PSM/DML_STAGING_R20_v5_0.sql
+PL/SQL procedure successfully completed.
+Script: PSM/8_AUTO_comparing_matrix_db_n_file_TABLE9.sql
+PL/SQL procedure successfully completed.
+Table created.
+PL/SQL procedure successfully completed.
+Script: PSM/8_1_AUTO_gen_psm_dependency.sql
+0 rows deleted.
+Commit complete.
+PL/SQL procedure successfully completed.
+Table created.
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000628           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000629           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000631           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000632           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000633           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000634           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000635           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000636           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000638           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000639           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000640           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000641           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000642           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000643           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000644           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000646           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000647           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000649           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000650           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000651           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000653           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000654           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000655           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000656           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000657           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000658           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000660           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000662           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000663           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000664           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000665           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000666           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000667           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000668           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000670           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000671           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000672           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000673           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000674           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000675           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000677           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000678           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000679           , 'Y')
+SKIP: --insert into validation_entity_inst_map(attribute_id, entity_id, entity_value, group_id, active)values(996       , 499       , 'NULL'    , 996000680           , 'Y')
+PL/SQL procedure successfully completed.
+Script: PSM/9_AUTO_BU_BE_AML_dif_db_n_file.sql
+PL/SQL procedure successfully completed.
+Table created.
+PL/SQL procedure successfully completed.
+Script: PSM/dml_PSM_email_maintenance.sql
+PL/SQL procedure successfully completed.
+Script: PSM/dcl_mv_psm4dbcar_refresh.sql
+PL/SQL procedure successfully completed.
+Script: dpr\dcl_mv_dpr_be_restrictedr_refresh.sql
+PL/SQL procedure successfully completed.
+Script: dpr\dcl_mv_veim.sql
+PL/SQL procedure successfully completed.
+Script: dml_MIFID_Applicability.sql
+PL/SQL procedure successfully completed.
+PL/SQL procedure successfully completed.
+Index created.
+Index created.
+PL/SQL procedure successfully completed.
+Start Timestamp : 02-DEC-17 06.41.36.821124000 PM +03:00
+PL/SQL procedure successfully completed.
+MIFID applicability Set Up Begin
+Trigger altered.
+Trigger altered.
+420796 rows created.
+Commit complete.
+Index dropped.
+Index dropped.
+Trigger altered.
+Trigger altered.
+MIFID applicability Set Up End
+End Timestamp : 02-DEC-17 06.41.48.571828000 PM +03:00
+PL/SQL procedure successfully completed.
+Script: ES\mv_search_city_map_refresh.sql
+PL/SQL procedure successfully completed.
+=========================
+Data Manipulation
+=========================
+PL/SQL procedure successfully completed.
+Script: dml_enable_rds_jobs.sql
+6 rows updated.
+Commit complete.
+Script: dml_Add_Internal_Identifier_SYSIN.sql
+PL/SQL procedure successfully completed.
+Script: dml_SYSIN_Accounts_Cleanup.sql
+0 SYSIN accounts have been deactivated
+PL/SQL procedure successfully completed.
+Script: dml_Upd_Volcker_Restriction_Flag.sql
+PL/SQL procedure successfully completed.
+Script: dml_upd_Volcker_Sup23a_Party.sql
+PL/SQL procedure successfully completed.
+Script: data/Utils/dml_PSM_inactivate_not_appl_rows_for_env.sql "GLOBAL-59248-1"
+INFO: Current environment CAR is UAT or Prod one.
+INFO: Script executed for inactivation PSM/IRS records that not applicable for Environment
+INFO: PSM entities updated:
+CH-59248-3        :38   with status: I
+RU-59248-2        :570  with status: I
+SA-59248-4        :288  with status: I
+SA-59248-5        :216  with status: I
+INFO: PSM actualised for:GLOBAL-59248-1
+PL/SQL procedure successfully completed.
+Script: update_jobs_RDS_and_WS_LOG.sql
+begin
+*
+ERROR at line 1:
+ORA-27467: invalid datatype for REPEAT_INTERVAL value
+ORA-06512: at "SYS.DBMS_ISCHED", line 4495
+ORA-06512: at "SYS.DBMS_SCHEDULER", line 2943
+ORA-06512: at line 2
+Script: PROD/ENABLE_DISABLED_JOBS.sql
+Job Name => APPLY2FATCA has been enabled. Start_date =>02-DEC-17 06.45.00.000000 PM +03:00
+Job Name => BR_MERGE has been enabled. Start_date =>02-DEC-17 10.44.56.000000 AM US/EASTERN
+Job Name => EMULATE_REPLICATION_PROCESS has been enabled. Start_date =>02-DEC-17 06.45.21.000000 PM +03:00
+Job Name => FILENET_TASK has been enabled. Start_date =>02-DEC-17 06.46.50.000000 PM +03:00
+Job Name => IBM_FILE_RETENTION has been enabled. Start_date =>09-DEC-17 04.00.00.000000 AM +03:00
+Job Name => IDENTIFY_EXPIRING_TAX_FORM has been enabled. Start_date =>03-DEC-17 12.13.00.700000 AM +03:00
+Job Name => JMS_SEND has been enabled. Start_date =>02-DEC-17 04.47.48.000000 PM +01:00
+Job Name => MVW_PARTY_RESTRICTED_REFRESH has been enabled. Start_date =>02-DEC-17 07.08.08.500000 PM +03:00
+Job Name => NCI_EXPIRY_DAILY_JOB has been enabled. Start_date =>02-DEC-17 11.53.59.500000 PM +01:00
+Job Name => PROCESS_AO_BR has been enabled. Start_date =>02-DEC-17 04.45.03.000000 PM +01:00
+Job Name => PROCESS_RULES_ENGINE has been enabled. Start_date =>02-DEC-17 06.42.42.000000 PM +03:00
+Job Name => PURGE_STG_TABLES has been enabled. Start_date =>03-DEC-17 05.45.19.500000 PM +03:00
+Job Name => RDS_REQUEST_ID_31744 has been enabled. Start_date =>
+Job Name => RDS_REQUEST_ID_31746 has been enabled. Start_date =>
+Job Name => REFRESH_PARTY_UM_FLAG has been enabled. Start_date =>03-DEC-17 12.07.00.000000 AM UTC
+PL/SQL procedure successfully completed.
+Script: PROD/schedule_propagation.sql
+PL/SQL procedure successfully completed.
+Commit complete.
+=========================
+Data Loaded
+=========================
+Script: gather_statistics.sql
+LND_BIG_SD_FILE_LOADER
+REPL_LOG
+PL/SQL procedure successfully completed.
+=========================
+MAIN script Finished
+=========================
+=========================
+Post Deploy Jobs
+=========================
+Done.
+=======================
+Installation finished.
+=======================
+=========================
+Rebuilding schema ...
+=========================
+=========================
+Invalid objects summary
+=========================
+OBJECT NAME                      OBJECT TYPE
+-------------------------------- --------------------
+PKG_REPL_ASYNC                   PACKAGE BODY
+VW_IRDS_EXCHANGES                VIEW
+VW_REPORT_PENDING_CASES          VIEW
+Press <Enter> to finish
+===============================================================================
+==                                                                           ==
+==                    DDL operations during current PATCH                    ==
+==                                                                           ==
+===============================================================================
+OBJ_NAME                       DDL_EVENT                      STATUS  DDL_TIME
+------------------------------ ------------------------------ ------- --------------------------------
+PKG_REPL_ASYNC                 ALTER                          INVALID 18:41:55
+VW_IRDS_EXCHANGES              ALTER                          INVALID 18:41:55
+VW_REPORT_PENDING_CASES        ALTER                          INVALID 18:41:55
+F_NUMARRAY_CBO_AID             DISASSOCIATE STATISTICS        VALID   18:41:54
+F_NUMARRAY_CBO_AID             ASSOCIATE STATISTICS           VALID   18:41:55
+IDX_MV_VEIM_01                 ALTER                          VALID   18:41:30
+IDX_MV_VEIM_01                 ALTER                          VALID   18:41:33
+I_SNAP$_MV_VEIM                ALTER                          VALID   18:41:30
+I_SNAP$_MV_VEIM                ALTER                          VALID   18:41:33
+MV_VEIM                        TRUNCATE                       VALID   18:41:29
+PSM_AML_RAW                    DROP                           VALID   18:38:53
+OBJ_NAME                       DDL_EVENT                      STATUS  DDL_TIME
+------------------------------ ------------------------------ ------- --------------------------------
+PSM_AML_RAW                    CREATE                         VALID   18:38:53
+PSM_DEP_RAW                    DROP                           VALID   18:38:37
+PSM_DEP_RAW                    CREATE                         VALID   18:38:37
+PSM_RAW                        DROP                           VALID   18:36:56
+PSM_RAW                        CREATE                         VALID   18:36:59
+TR_1126488063_AR_AIUD          ALTER                          VALID   18:41:36
+TR_1126488063_AR_AIUD          ALTER                          VALID   18:41:48
+TR_VALIDATION_ENTT_INST_MAP_BI ALTER                          VALID   18:41:36
+TR_VALIDATION_ENTT_INST_MAP_BI ALTER                          VALID   18:41:48
+MV_SD_PSM_4DBCAR               ALTER                                  18:38:55
+MV_DPR_BE_RESTRICTED           ALTER                                  18:39:04
+OBJ_NAME                       DDL_EVENT                      STATUS  DDL_TIME
+------------------------------ ------------------------------ ------- --------------------------------
+MV_VEIM                        ALTER                                  18:41:29
+MIFID_APPL_STG_IDX             CREATE                                 18:41:34
+MIFID_APPL_STG_IDX2            CREATE                                 18:41:35
+MIFID_APPL_STG_IDX             DROP                                   18:41:48
+MIFID_APPL_STG_IDX2            DROP                                   18:41:48
+MV_SEARCH_CITY_MAP             ALTER                                  18:41:48
+MV_VEIM                        ALTER                                  18:41:48
+MV_SD_PSM_4DBCAR               ALTER                                  18:41:56
+MV_DPR_BE_RESTRICTED           ALTER                                  18:41:56
+MV_SEARCH_RELATIONSHIP_RHP     ALTER                                  18:41:56
+MV_SEARCH_PARTY_PII_ALL        ALTER                                  18:41:56
+OBJ_NAME                       DDL_EVENT                      STATUS  DDL_TIME
+------------------------------ ------------------------------ ------- --------------------------------
+MV_SEARCH_PARTY_3RD_ALL        ALTER                                  18:41:56
+MV_SEARCH_RELATIONSHIP_2ND_ALL ALTER                                  18:41:56
+MV_SEARCH_DOCUMENT_3RD_ALL     ALTER                                  18:41:56
+.                                          See table AUDIT_DDL for details ...
+===============================================================================
+==                                                                           ==
+==                    List of ERRORS during current PATCH                    ==
+==                                                                           ==
+===============================================================================
+ERR_CODE   ERROR_MESSAGE                                                                                        CNT
+---------- ---------------------------------------------------------------------------------------------------- ---
+ORA-06512  ORA-06512: at "SYS.DBMS_ISCHED", line 4495                                                           1
+ORA-06512  ORA-06512: at "SYS.DBMS_SCHEDULER", line 2943                                                        1
+ORA-06512  ORA-06512: at line 2                                                                                 1
+ORA-27467  ORA-27467: invalid datatype for REPEAT_INTERVAL value                                                1
+.                                         See table SPERRORLOG for details ...
+===============================================================================
+==                                                                           ==
+==                           PATCH Info                                      ==
+==                                                                           ==
+===============================================================================
+ID PATCH_NAME                STARTED              FINISHED
+------- ------------------------- -------------------- --------------------
+945 CRDS_OWNER_ODS_POST_DEPLO 02.12.2017 18:36:39  02.12.2017 18:41:58
+YMENT
+.                                      See table AUDIT_PATCHES for details ...
+=========================
+Saving deployment log ...
+=========================
