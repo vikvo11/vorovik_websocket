@@ -6,7 +6,7 @@ from flask import jsonify #For response in /webhook
 from flask_sslify import SSLify #For use HTTPS
 from flask import Flask, flash, redirect, render_template, request, session, abort,url_for,logging #For work with HTTP and templates
 ##from flask_mysqldb import MySQL #For connect to MySQL DB
-from HTTP_basic_Auth import auth #For HTTP basic auth
+#from HTTP_basic_Auth import auth #For HTTP basic auth
     #<End -Flask modules>
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators  # Forms for create HTML fields
 from passlib.hash import sha256_crypt # For Password cashing
