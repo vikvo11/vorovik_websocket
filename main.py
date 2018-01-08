@@ -176,7 +176,7 @@ def webhook():
     return '<h1>Hello bot</h1>'
 
 @app.route('/last_msg/',methods=['POST','GET'])
-@auth.login_required
+#@auth.login_required
 #curl -u vorovik:python123 -i https://vorovik.pythonanywhere.com/last_msg/
 def tes():
     r='<h2>{}</h2>'.format(last_msg)
