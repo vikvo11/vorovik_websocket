@@ -27,7 +27,7 @@
             // to the client. The data is then displayed in the "Received"
             // section of the page.
             socket.on('my_response', function(msg) {
-                $('#log').append('<br>' + $('<div/>').text('Received #' + msg.count + ': ' + msg.data).html());
+                $('#log').append('<br ng-model="yourN">' + $('<div/>').text('Received #' + msg.count + ': ' + msg.data).html());
             });
             // Interval function that tests message latency by sending a "ping"
             // message. The server then responds with a "pong" message and the
@@ -97,8 +97,12 @@
     </form>
 
     <h2>Receive:</h2>
-    <input type="text" id="log" ng-model="yourName">
-    <b>{{ '{{yourName}}' }}</b>
+    <div  id="log">
+      <input type="text" id="log" ng-model="yourName">
+    </div>
+
+
+    <b>{{ '{{yourName}}' }}</b><b>{{ '{{yourN}}' }}</b>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
 </body>
