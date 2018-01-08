@@ -5,7 +5,7 @@ from misck import token,chat_id_old # Misck.py - config for telegram_bot
 from flask import jsonify #For response in /webhook
 from flask_sslify import SSLify #For use HTTPS
 from flask import Flask, flash, redirect, render_template, request, session, abort,url_for,logging #For work with HTTP and templates
-from flask_mysqldb import MySQL #For connect to MySQL DB
+#from flask_mysqldb import MySQL #For connect to MySQL DB
 #from HTTP_basic_Auth import auth #For HTTP basic auth
     #<End -Flask modules>
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators  # Forms for create HTML fields
@@ -52,7 +52,7 @@ app.config['MYSQL_PASSWORD']='cb.,fq12-'
 app.config['MYSQL_DB']='vorovik$vorovikapp'
 app.config['MYSQL_CURSORCLASS']='DictCursor'
 #init MySQL
-mysql=MySQL(app)
+#mysql=MySQL(app)
 '''
 
 '''
