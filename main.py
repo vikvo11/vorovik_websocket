@@ -3,7 +3,7 @@
 from misck import token,chat_id_old # Misck.py - config for telegram_bot
     #<Start -Flask modules:>
 from flask import jsonify #For response in /webhook
-from flask_sslify import SSLify #For use HTTPS
+#from flask_sslify import SSLify #For use HTTPS
 from flask import Flask, flash, redirect, render_template, request, session, abort,url_for,logging #For work with HTTP and templates
 ##from flask_mysqldb import MySQL #For connect to MySQL DB
 #from HTTP_basic_Auth import auth #For HTTP basic auth
