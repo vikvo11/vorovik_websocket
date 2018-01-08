@@ -3,10 +3,10 @@
 from misck import token,chat_id_old # Misck.py - config for telegram_bot
     #<Start -Flask modules:>
 from flask import jsonify #For response in /webhook
-#from flask_sslify import SSLify #For use HTTPS
+from flask_sslify import SSLify #For use HTTPS
 from flask import Flask, flash, redirect, render_template, request, session, abort,url_for,logging #For work with HTTP and templates
-##from flask_mysqldb import MySQL #For connect to MySQL DB
-#from HTTP_basic_Auth import auth #For HTTP basic auth
+from flask_mysqldb import MySQL #For connect to MySQL DB
+from HTTP_basic_Auth import auth #For HTTP basic auth
     #<End -Flask modules>
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators  # Forms for create HTML fields
 from passlib.hash import sha256_crypt # For Password cashing
@@ -17,7 +17,7 @@ import json # JSON modules
 import re # Regular expression - https://pythex.org/
 
 from version import base
-
+#from flask_socketio import SocketIO, emit
 from flask_socketio import SocketIO, emit
 from threading import Lock
 
@@ -30,27 +30,26 @@ last_msg=''
 #https://api.telegram.org/bot521265983:AAFUSq8QQzLUURwmCgXeBCjhRThRvf9YVM0/setWebhook?url=https://vorovik.pythonanywhere.com/
 URL='https://api.telegram.org/bot{}/'.format(token)
     #<End -Declare> :
-async_mode = None
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'memcached'
 app.config['SECRET_KEY'] = 'morkovka18'
 app.debug = True
-#sslify=SSLify(app)
+sslify=SSLify(app)
 socketio = SocketIO(app)
-#socketio.run(app)
 socketio = SocketIO(app, async_mode=async_mode)
 thread = None
 thread_lock = Lock()
+#socketio.run(app)
 
 
 #Config mysql
-#app.config['MYSQL_HOST']='vorovik.mysql.pythonanywhere-services.com'
-#app.config['MYSQL_USER']='vorovik'
-#app.config['MYSQL_PASSWORD']='cb.,fq12-'
-#app.config['MYSQL_DB']='vorovik$vorovikapp'
-#app.config['MYSQL_CURSORCLASS']='DictCursor'
+app.config['MYSQL_HOST']='vorovik.mysql.pythonanywhere-services.com'
+app.config['MYSQL_USER']='vorovik'
+app.config['MYSQL_PASSWORD']='cb.,fq12-'
+app.config['MYSQL_DB']='vorovik$vorovikapp'
+app.config['MYSQL_CURSORCLASS']='DictCursor'
 #init MySQL
-#mysql=MySQL(app)
+mysql=MySQL(app)
 
 def write_json(data,filename='answer.json'):
     with open(filename,'w') as f:
@@ -100,7 +99,24 @@ def index():
 @app.route('/about')
 def about():
     return render_template('about.html')
+#Articles
+@app.route('/articles')
+def articles():
+    # Create cursor
+    cur = mysql.connection.cursor()
 
+    # Get articles
+    result = cur.execute("SELECT * FROM articles")
+
+    articles = cur.fetchall()
+
+    if result > 0:
+        return render_template('articles.html', articles=articles)
+    else:
+        msg = 'No Articles Found'
+        return render_template('articles.html', msg=msg)
+    # Close connection
+    cur.close()
 
 @app.route('/angularjs')
 def angularjs():
@@ -127,6 +143,17 @@ def deployment():
 
 
 
+#Single articl
+@app.route('/article/<string:id>/')
+def article(id):
+    # Create cursor
+    cur = mysql.connection.cursor()
+
+    # Get articl
+    result = cur.execute("SELECT * FROM articles WHERE id=%s",[id])
+
+    article = cur.fetchone()
+    return render_template('article.html',article=article)
 
 
 #RegisterFormClass
@@ -147,9 +174,69 @@ class ArticleForm(Form):
     body = TextAreaField('Body',[validators.length(min=30)])
 
 
+#User register
+@app.route('/register', methods=['GET','POST'])
+def register():
+    form = RegisterForm(request.form)
+    if request.method =='POST' and form.validate():
+        name = form.name.data
+        username = form.username.data
+        email = form.email.data
+        password = sha256_crypt.encrypt(str(form.password.data))
+        token = form.token.data
+        #Create cursor
+        cur = mysql.connection.cursor()
+        #Execute query
+        cur.execute("INSERT INTO users(name, email, username, password, token) VALUES(%s, %s, %s, %s, %s)",(name, email, username, password, token))
+        #Commit ot db
+        mysql.connection.commit()
+        #Close connection
+        cur.close()
+        flash('You are now registered and can log in','success')
+        return redirect(url_for('login'))
+        #return 'ok'
+    return render_template('register.html', form=form)
+
+#User Login
+@app.route('/login',methods=['GET','POST'])
+def login():
+    if request.method == 'POST':
+        #Get Form fields
+        username = request.form['username']
+        password_candidate = request.form['password']
+
+        #Create a Cursor
+        cur = mysql.connection.cursor()
+
+        #Get user by Username
+        result = cur.execute("SELECT * FROM users WHERE username=%s",[username])
+
+        if result >0 :
+            #Get stored hash
+            data = cur. fetchone()
+            password = data['password']
+
+            #Compare Passwords
+            if sha256_crypt.verify(password_candidate,password):
+                #app.logger.info('PASSWORD MATCHED')
+                #Passed
+                session['logged_in']= True
+                session['username'] = username
+                flash('You are now logged in','success')
+                return redirect(url_for('dashbord'))
+            else:
+                error='Invalid login'
+                return render_template('login.html',error=error)
+            #Closed connection
+            cur.close()
+        else:
+            error='Username not found'
+            return render_template('login.html',error=error)
 
 
+        #cur.close()
 
+    return render_template('login.html')
 
 
 
@@ -159,6 +246,43 @@ def logout():
     session.clear()
     flash('You are now logged out','success')
     return redirect(url_for('login'))
+
+#Dashbord
+@app.route('/dashbord')
+@is_logged_in
+def dashbord():
+    # Create cursor
+    cur = mysql.connection.cursor()
+    # Get articles
+    result = cur.execute("SELECT * FROM articles")
+    articles = cur.fetchall()
+    if result > 0:
+        return render_template('dashbord.html', articles=articles)
+    else:
+        msg = 'No Articles Found'
+        return render_template('dashbord.html', msg=msg)
+    # Close connection
+    cur.close()
+
+#Add_articles
+@app.route('/add_article', methods=['GET','POST'])
+@is_logged_in
+def add_article():
+    form = ArticleForm(request.form)
+    if request.method =='POST' and form.validate():
+        title = form.title.data
+        body = form.body.data
+        #Create cursor
+        cur = mysql.connection.cursor()
+        #Execute query
+        cur.execute("INSERT INTO articles(title,author,body) VALUES(%s,%s,%s)",(title,session['username'],body))
+        #Commit ot db
+        mysql.connection.commit()
+        #Close connection
+        cur.close()
+        flash('You are now added a new one article','success')
+        return redirect(url_for('dashbord'))
+    return render_template('add_article.html',form=form)
 
 
 
@@ -182,7 +306,7 @@ def webhook():
     return '<h1>Hello bot</h1>'
 
 @app.route('/last_msg/',methods=['POST','GET'])
-#@auth.login_required
+@auth.login_required
 #curl -u vorovik:python123 -i https://vorovik.pythonanywhere.com/last_msg/
 def tes():
     r='<h2>{}</h2>'.format(last_msg)
@@ -195,7 +319,6 @@ def main():
             base[1].shema=str(number)
     kk=0
     pass
-
 '''
 '''
 def background_thread():
@@ -292,6 +415,7 @@ def test_disconnect():
 '''
 
 if __name__ =='__main__':
+    #socketio.run(app)
     socketio.run(app, host='0.0.0.0',port=5000, debug=True)
     main()
     #app.run('0.0.0.0',port=5000)
