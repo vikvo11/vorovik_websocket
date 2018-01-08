@@ -38,13 +38,13 @@ socketio = SocketIO(app)
 
 
 #Config mysql
-app.config['MYSQL_HOST']='vorovik.mysql.pythonanywhere-services.com'
-app.config['MYSQL_USER']='vorovik'
-app.config['MYSQL_PASSWORD']='cb.,fq12-'
-app.config['MYSQL_DB']='vorovik$vorovikapp'
-app.config['MYSQL_CURSORCLASS']='DictCursor'
+#app.config['MYSQL_HOST']='vorovik.mysql.pythonanywhere-services.com'
+#app.config['MYSQL_USER']='vorovik'
+#app.config['MYSQL_PASSWORD']='cb.,fq12-'
+#app.config['MYSQL_DB']='vorovik$vorovikapp'
+#app.config['MYSQL_CURSORCLASS']='DictCursor'
 #init MySQL
-mysql=MySQL(app)
+#mysql=MySQL(app)
 
 def write_json(data,filename='answer.json'):
     with open(filename,'w') as f:
