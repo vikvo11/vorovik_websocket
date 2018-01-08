@@ -1,0 +1,86 @@
+>> GIT : touch htest && git add htest && git commit -m "Webhook test" && git push
+
+AngularJS: https://angularjs.org/  http://www.angularjshub.com/examples/eventhandlers/mouseevents/
+      <html ng-app>
+        <head>
+          <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+        </head>
+
+        <div>
+          <label>Name:</label>
+          <input type="text" ng-model="yourName" placeholder="Enter a name here">
+          <hr>
+          <h1>Hello {{ '{{yourName}}' }}</h1>
+        </div>
+
+wget
+
+wget -r -k -l 10 -p -E -nc *
+
+https://sourceforge.net/projects/tumagcc/files/?source=navbar
+
+---> use url_for : <link rel="stylesheet" href="{{ url_for('static', filename='ladymarlene/css/style.css')}}" />
+---> CASH :
+      pip install Flask-Caching
+      from flask_caching import Cache
+
+
+1 create home.html+layout.html
+2 html+Tab
+3 https://www.bootstrapcdn.com/
+4 https://getbootstrap.com/
+5 <div class="container" style="padding-top:5rem">
+6 return render_template('articles.html',articles=Articles)
+    -> articles.html
+    {% for article in articles %}
+        {{article.title}}
+    {% endfor %}
+7 Data base:
+Database host address:vorovik.mysql.pythonanywhere-services.com
+Username: vorovik
+password: cb.,fq12-
+Start a console on:vorovik$vorovikapp
+
+SHOW DATABASES;
+CREATE DATABASE vorovik_app
+USE vorovik$vorovikapp
+
+CREATE TABLE users(id INT(11) AUTO_INCREMENT PRIMARY KEY, name VARCHAR(100), email VARCHAR(100), username VARCHAR(30), password VARCHAR(100),
+ register_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP, token VARCHAR(100));
+
+ SHOW TABLES;
+ DESCRIBE users;
+
+ pip install flask-mysqldb  # need mysql-server yum install mysql-server
+ pip install Flask-WTF
+ pip install passlib
+
+ ---> SSH ssh vorovik@ssh.pythonanywhere.com
+ ssh.pythonanywhere.com
+    ~/.ssh/authorized_keys
+
+    -- ssh vorovik@ssh.pythonanywhere.com
+    Jenkins SSH Plugin
+
+@Logged in ->
+
+        from functools import wraps
+
+        #Check if user logged in
+        def is_logged_in(f):
+            @wraps(f)
+            def wrap(*args,**kwargs):
+                if 'logged_in' in session:
+                    return f(*args,**kwargs)
+                else:
+                    flash('Unauthorized, Please login', 'danger')
+                    return redirect(url_for('login'))
+            return wrap
+
+        @app.route('/dashbord')
+        @is_logged_in
+        def dashbord():
+
+--Articles
+CREATE TABLE articles (id INT(11) AUTO_INCREMENT PRIMARY KEY, title VARCHAR(255), author VARCHAR(100), body TEXT, create_date TIMESTAMP DEFAU
+LT CURRENT_TIMESTAMP);

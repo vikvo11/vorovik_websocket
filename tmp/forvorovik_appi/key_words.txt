@@ -1,0 +1,27 @@
+Script: update_jobs_RDS_and_WS_LOG.sql
+begin
+*
+ERROR at line 1:
+ORA-27467: invalid datatype for REPEAT_INTERVAL value
+ORA-06512: at "SYS.DBMS_ISCHED", line 4495
+ORA-06512: at "SYS.DBMS_SCHEDULER", line 2943
+ORA-06512: at line 2
+
+
+=========================
+Invalid objects summary
+=========================
+OBJECT NAME                      OBJECT TYPE
+-------------------------------- --------------------
+PKG_REPL_ASYNC                   PACKAGE BODY
+VW_IRDS_EXCHANGES                VIEW
+VW_REPORT_PENDING_CASES          VIEW
+Press <Enter> to finish
+=====================
+
+select * from audit_owner.audit_patches where STARTED > trunc(sysdate) and spool like '%ORA%' order by started desc;
+
+
+select * from crds_owner.audit_patches where STARTED > trunc(sysdate) and spool like '%ORA%' order by started desc;
+
+select * from car_owner.audit_patches where STARTED > trunc(sysdate) and spool like '%ORA%' order by started desc;
