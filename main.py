@@ -11,7 +11,7 @@ from flask import Flask, flash, redirect, render_template, request, session, abo
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators  # Forms for create HTML fields
 from passlib.hash import sha256_crypt # For Password cashing
 from functools import wraps # For lock access
-#from data import Version 
+#from data import Version  
 import requests # For HTTP requests
 import json # JSON modules
 import re # Regular expression - https://pythex.org/
