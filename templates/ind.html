@@ -27,8 +27,9 @@
             // to the client. The data is then displayed in the "Received"
             // section of the page.
             socket.on('my_response', function(msg) {
-                $('#log').append('<br ng-model="yourN">' + $('<div/>').text('Received #' + msg.count + ': ' + msg.data).html());
+                $('#log').append('<br ng-model=yourN>' + $('<div/>').text('Received #' + msg.count + ': ' + msg.data).html());
             });
+            
             // Interval function that tests message latency by sending a "ping"
             // message. The server then responds with a "pong" message and the
             // round trip time is measured.
